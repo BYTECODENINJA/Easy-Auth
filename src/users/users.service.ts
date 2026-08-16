@@ -12,7 +12,7 @@ export class UsersService {
   }
   async findById(id: string) {
     return db.query.users.findFirst({
-      where: eq(users.id, id)
+      where: eq(users.id, id),
     });
   }
 
@@ -31,11 +31,11 @@ export class UsersService {
     return user;
   }
 
-  async findAll(){
+  async findAll() {
     return db.query.users.findMany();
   }
 
-  async delete(id: string){
+  async delete(id: string) {
     return db.delete(users).where(eq(users.id, id));
   }
 }
