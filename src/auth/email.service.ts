@@ -42,6 +42,6 @@ export class EmailService {
       <a href="${resetPasswordUrl}">Reset Password</a>
       <p>If you didn't request a password request, you can ignore this email.</p>
       `,
-    })
+    });
   }
 }

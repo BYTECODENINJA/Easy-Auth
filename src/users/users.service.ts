@@ -16,6 +16,18 @@ export class UsersService {
     });
   }
 
+  async findByVerificationToken(token: string) {
+    return db.query.users.findFirst({
+      where: eq(users.verificationToken, token),
+    });
+  }
+
+  async findByResetToken(token: string) {
+    return db.query.users.findFirst({
+      where: eq(users.resetToken, token),
+    });
+  }
+
   async create(data: NewUser) {
     const [user] = await db.insert(users).values(data).returning();
     return user;
