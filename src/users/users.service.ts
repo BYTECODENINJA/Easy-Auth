@@ -36,6 +36,6 @@ export class UsersService {
   }
 
   async delete(id: string) {
-    return db.delete(users).where(eq(users.id, id));
+    await db.delete(users).where(eq(users.id, id));
   }
 }
