@@ -9,9 +9,9 @@ import { ConfigService } from '@nestjs/config';
 import * as bcrypt from 'bcryptjs';
 import * as crypto from 'crypto';
 import { UsersService } from 'src/users/users.service';
-import { EmailService } from 'src/auth/email.service';
-import type { RegisterDto } from 'src/auth/dto/register.dto';
-import type { LoginDto } from 'src/auth/dto/login.dto';
+import { EmailService } from './email.service';
+import type { RegisterDto } from './dto/register.dto';
+import type { LoginDto } from './dto/login.dto';
 import type { Response } from 'express';
 import type { User } from 'src/db/schema';
 
