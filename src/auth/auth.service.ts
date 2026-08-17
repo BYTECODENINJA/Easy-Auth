@@ -46,6 +46,7 @@ export class AuthService {
       verificationTokenExpiresAt,
     });
 
+    console.log('Registered user:', { id: user.id, email: user.email, verificationToken: user.verificationToken });
     void this.emailService.sendVerificationEmail(user.email, verificationToken);
 
     return {
@@ -55,7 +56,9 @@ export class AuthService {
   }
 
   async verifyEmail(token: string, res: Response) {
+    console.log('Verifying token:', token);
     const user = await this.usersService.findByVerificationToken(token);
+    console.log('Found user:', user ? { id: user.id, email: user.email, verificationToken: user.verificationToken } : null);
 
     if (!user || !user.verificationToken) {
       throw new BadRequestException('Invalid verification token');

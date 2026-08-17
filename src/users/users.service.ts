@@ -17,9 +17,17 @@ export class UsersService {
   }
 
   async findByVerificationToken(token: string) {
-    return db.query.users.findFirst({
-      where: eq(users.verificationToken, token),
-    });
+    try {
+      console.log('DB: Looking up verification token...');
+      const result = await db.query.users.findFirst({
+        where: eq(users.verificationToken, token),
+      });
+      console.log('DB: Token lookup result:', result ? 'found' : 'not found');
+      return result;
+    } catch (error) {
+      console.error('DB: Token lookup error:', error);
+      throw error;
+    }
   }
 
   async findByResetToken(token: string) {
