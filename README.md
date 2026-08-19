@@ -1,5 +1,8 @@
 # Easy Auth
 
+![Project Diagram](ProjectImage.png)
+
+
 A production-ready authentication and task management API built with NestJS, featuring JWT-based authentication with refresh tokens, email verification via Resend, role-based access control, and a full CRUD task system.
 
 ## Key Highlights
@@ -609,19 +612,6 @@ pnpm run format     # Format with Prettier
 
 ---
 
-## Deployment & CI/CD
-
-Not yet configured. There are no Dockerfiles, Docker Compose files, or CI/CD pipeline definitions in this repository.
-
-To deploy manually:
-
-1. Set all environment variables in your hosting platform
-2. Run `pnpm db:push` to sync the schema
-3. Run `pnpm run build`
-4. Run `pnpm run start:prod`
-
----
-
 ## Contributing
 
 1. Create a feature branch from `main`
@@ -635,7 +625,3 @@ To deploy manually:
 Follow conventional commits: `feat:`, `fix:`, `refactor:`, `docs:`, `test:`, `chore:`.
 
 ---
-
-## License
-
-UNLICENSED
